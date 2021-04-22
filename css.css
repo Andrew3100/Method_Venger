@@ -14,7 +14,13 @@
     margin: auto;
 }
 
+.table_td {
+    text-align: center;
+    background-color: darkgray;
+    color: yellow;
+}
+
 .table_s {
-    width: 600px;
+    width: 300px;
     margin: auto;
 }

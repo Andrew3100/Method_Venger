@@ -6,14 +6,14 @@ $size = $_POST['matrix_size'];
 echo '<h5 class="header">Введите элементы матрицы. Все элементы обязательны к заполнению</h5>';
 echo '<br>
 <form action="main.php" method="POST">
-<table class="table_s bg-dark table-bordered">';
+<table class="table_s table-bordered">';
 
 for ($row=1;$row<=$size;$row++) {
     echo '<tr>';
     for ($col=1;$col<=$size;$col++) {
         $rand = rand(1,100);
         echo "<td>
-                <input name='A$row$col' value='$rand' placeholder='A$row$col' class='form-control form-control-lg' type='text' required>
+                <input name='A$row$col' value='$rand' placeholder='A$row$col' class='table_td form-control form-control-lg' type='text' required>
               </td>";
     }
     echo '</tr>';
