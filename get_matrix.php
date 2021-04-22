@@ -2,6 +2,7 @@
 include 'bootstrap.html';
 /*Размер матрицы, введённый пользователем*/
 $size = $_POST['matrix_size'];
+
 echo '<h5 class="header">Введите элементы матрицы. Все элементы обязательны к заполнению</h5>';
 echo '<br>
 <form action="main.php" method="POST">
