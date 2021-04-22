@@ -1,0 +1,20 @@
+.header {
+    color: green;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.instruction {
+    text-align: center;
+    color: green;
+}
+
+.f {
+    width: 93px;
+    margin: auto;
+}
+
+.table_s {
+    width: 600px;
+    margin: auto;
+}
