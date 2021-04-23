@@ -111,7 +111,7 @@ function GetControlOfZero($array) {
     /*Выводим таблицы координат с нулями по Х*/
     echo '<table class="table_s table-bordered">';
     echo '<tr>';
-    foreach ($zero_address as $index => $item) {
+    foreach ($zero_address as $item) {
         echo "<td style='text-align: center'>{$item->x}</td>";
     }
     echo '</tr>';
@@ -120,8 +120,8 @@ function GetControlOfZero($array) {
     /*Выводим таблицы координат с нулями по Х*/
     echo '<br><table class="table_s table-bordered">';
     echo '<tr>';
-    foreach ($zero_address as $index => $item) {
-        echo "<td style='text-align: center'>{$zero_address[$index]->y}</td>";
+    foreach ($zero_address as $item) {
+        echo "<td style='text-align: center'>{$item->y}</td>";
     }
     echo '</tr>';
     echo '</table>';
@@ -131,8 +131,27 @@ function GetControlOfZero($array) {
 
     /*Взять каждый элемент строки*/
 
-
+    /*Объявляем массив лишних пар, заполняем его в цикле*/
+    $ExtraPairsArrayX = array();
+    $ExtraPairsArrayY = array();
     foreach ($zero_address as $zero_address1) {
+        /*Фиксируем первую координату ПО СТРОКЕ*/
+         $finder_value = $zero_address1->x;
+        /*Бежим по объекту, ищем совпадения по координате Y*/
+
+        foreach ($zero_address as $zero_address2) {
+
+            echo $zero_address2->x;
+            echo $zero_address2->y;
+            /*if ($zero_address2->y == $finder_value) {
+                $ExtraPairsArrayX[] = $zero_address2->x;
+                $ExtraPairsArrayY[] = $zero_address2->y;
+            }*/
+        }
 
     }
+    echo '<pre>';
+    var_dump($ExtraPairsArrayX);
+    var_dump($ExtraPairsArrayY);
+    echo '</pre>';
 }
