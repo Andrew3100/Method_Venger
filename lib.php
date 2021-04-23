@@ -138,9 +138,7 @@ function GetControlOfZero($array) {
         /*Фиксируем первую координату ПО СТРОКЕ*/
          $finder_value = $zero_address1->x;
         /*Бежим по объекту, ищем совпадения по координате Y*/
-
         foreach ($zero_address as $zero_address2) {
-
             echo $zero_address2->x;
             echo $zero_address2->y;
             /*if ($zero_address2->y == $finder_value) {
