@@ -69,7 +69,7 @@ function GetMatrixByStep1($array,$color = '') {
         <table class="table_s table-bordered">';
     for ($i=0; $i<count($array); $i++) {
 
-        $MaxOnRow = max($array[$i]); //максимумы в каждой строке
+        $MaxOnRow = min($array[$i]); //максимумы в каждой строке
         $rows = array();
         echo '<tr>';
         for ($g=0; $g<count($array); $g++) {
@@ -94,8 +94,8 @@ function GetMatrixByStep1($array,$color = '') {
 /*Эта функция выбирает нули в матрице*/
 
 function GetControlOfZero($array) {
-    $zero_address = array();
 
+    $zero_address = array();
 
     for ($i=0; $i<count($array); $i++) {
         for ($g=0; $g<count($array); $g++) {
@@ -131,24 +131,44 @@ function GetControlOfZero($array) {
 
     /*Взять каждый элемент строки*/
 
-    /*Объявляем массив лишних пар, заполняем его в цикле*/
+    /*Объявляем массив лишних пар по X, заполняем его в цикле*/
     $ExtraPairsArrayX = array();
+    /*Объявляем массив лишних пар по Y, заполняем его в цикле*/
     $ExtraPairsArrayY = array();
+    /*Массив значений координат Y. Используется для того, чтобы
+    перебирать все значения этого массива по правую сторону от координаты X
+    */
+    $y_string = array();
+    foreach ($zero_address as $item) {
+        $y_string[] = $item->y;
+    }
+
+    $i = 0;
     foreach ($zero_address as $zero_address1) {
         /*Фиксируем первую координату ПО СТРОКЕ*/
          $finder_value = $zero_address1->x;
-        /*Бежим по объекту, ищем совпадения по координате Y*/
-        foreach ($zero_address as $zero_address2) {
+
+         for ($f=$i+1;$f<count($y_string);$f++) {
+             if ($y_string[$f] == $finder_value) {
+                 echo "Нашёл пару значений. Значение $y_string[$f] совпадает со значением $finder_value<br>";
+                 $ExtraPairsArrayX[] = $zero_address1->x;
+                 $ExtraPairsArrayY[] = $zero_address1->y;
+             }
+         }
+
+        /*foreach ($zero_address as $zero_address2) {
 
             if ($zero_address2->y == $finder_value) {
                 echo "Нашёл пару значений. Значение $zero_address2->y совпадает со значением $finder_value<br>";
                 $ExtraPairsArrayX[] = $zero_address2->x;
                 $ExtraPairsArrayY[] = $zero_address2->y;
             }
-        }
+        }*/
+
+        $i++;
     }
     echo '<pre>';
-    //var_dump($ExtraPairsArrayX);
-    //var_dump($ExtraPairsArrayY);
+    var_dump($ExtraPairsArrayX);
+    var_dump($ExtraPairsArrayY);
     echo '</pre>';
 }
