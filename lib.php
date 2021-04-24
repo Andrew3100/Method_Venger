@@ -61,7 +61,7 @@ function GetUserMatrixByForm() {
 
 
 /*Вычисление матрицы на первом шаге алгоритма, когда решаем задачу на максимум*/
-function GetMatrixByStep1($array) {
+function GetMatrixByStep1($array,$color = '') {
 
     $cols = array();
     echo '<h5 class="header">Вид матрицы после первого шага</h5>';
@@ -139,17 +139,16 @@ function GetControlOfZero($array) {
          $finder_value = $zero_address1->x;
         /*Бежим по объекту, ищем совпадения по координате Y*/
         foreach ($zero_address as $zero_address2) {
-            echo $zero_address2->x;
-            echo $zero_address2->y;
-            /*if ($zero_address2->y == $finder_value) {
+
+            if ($zero_address2->y == $finder_value) {
+                echo "Нашёл пару значений. Значение $zero_address2->y совпадает со значением $finder_value<br>";
                 $ExtraPairsArrayX[] = $zero_address2->x;
                 $ExtraPairsArrayY[] = $zero_address2->y;
-            }*/
+            }
         }
-
     }
     echo '<pre>';
-    var_dump($ExtraPairsArrayX);
-    var_dump($ExtraPairsArrayY);
+    //var_dump($ExtraPairsArrayX);
+    //var_dump($ExtraPairsArrayY);
     echo '</pre>';
 }
