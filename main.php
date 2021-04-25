@@ -16,9 +16,13 @@ for ($row=1;$row<=$size;$row++) {
     }
 
 echo '</pre>';
+
 $step1 = ReduxMatrixByRows($cols);
 /*Для проведения редукции по столбцам вычисляем массив минимумов по строкам*/
-$min_list = (GetMinimalElementListByCols($cols));
+$min_list = (GetMinimalElementListByCols($step1));
+
 $k = (ReduxMatrixByCols($step1,$min_list));
 
-printMatrix($k,'Результат редукции по столбцам');
+printMatrix($k,'Редукция по столбцам');
+
+//printMatrix($k,'Результат редукции по столбцам');

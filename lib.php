@@ -81,12 +81,11 @@ function ReduxMatrixByCols($array,$min_list) {
 
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
-            $values[] = abs($array[$g][$i] - $min_list[$i]);
+            $values[] = abs($array[$i][$g] - $min_list[$i]);
         }
         $cols[] = $values;
         unset($values);
     }
-
     return $cols;
 }
 
