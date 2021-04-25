@@ -40,7 +40,7 @@ function GetUserMatrixByForm() {
         for ($col=1;$col<=$size;$col++) {
             $rand = '';
             /*можно раскомментировать если лень заполнять матрицу при тестировании программы*/
-            $rand = rand(1,100);
+            $rand = rand(1,1000);
             echo "<td>
                 <input name='A$row$col' value='$rand' placeholder='A$row$col' class='table_td form-control form-control-lg' type='text' required>
               </td>";
@@ -61,19 +61,19 @@ function GetUserMatrixByForm() {
 
 
 /*Вычисление матрицы на первом шаге алгоритма, когда решаем задачу на максимум*/
-function GetMatrixByStep1($array,$color = '') {
+function ReduxMatrixByRows($array) {
 
     $cols = array();
-    echo '<h5 class="header">Вид матрицы после первого шага</h5>';
+    echo '<h5 class="header">Результат редукции матрицы по строкам:</h5>';
     echo '<br>
         <table class="table_s table-bordered">';
     for ($i=0; $i<count($array); $i++) {
 
-        $MaxOnRow = min($array[$i]); //максимумы в каждой строке
+        $MinOnRow = min($array[$i]); //максимумы в каждой строке
         $rows = array();
         echo '<tr>';
         for ($g=0; $g<count($array); $g++) {
-            $element = abs($array[$i][$g] - $MaxOnRow);
+            $element = abs($array[$i][$g] - $MinOnRow);
             if ($element==0) {
                 $color = 'yellow';
             }
@@ -90,12 +90,28 @@ function GetMatrixByStep1($array,$color = '') {
     return $cols;
 }
 
-/*Далее необходимо выбрать нули в матрице. Если ноль выбран по строке, то столбец с этим нулём трогать нельзя*/
-/*Эта функция выбирает нули в матрице*/
+
+function ReduxMatrixByCols($arr) {
+    $cols = array();
+    echo '<br>
+        <table class="table_s table-bordered">';
+    for ($i=0;$i<count($arr);$i++) {
+        echo '<tr>';
+        $MinOnCol = min($arr[$i]);
+
+
+        for ($g=0;$g<count($arr);$g++) {
+
+             echo $cols[] = '<td>'.$arr[$g][$i].'</td>';
+        }
+        echo '</tr>';
+    }
+    return $cols;
+}
 
 function GetControlOfZero($array) {
-
     $zero_address = array();
+
 
     for ($i=0; $i<count($array); $i++) {
         for ($g=0; $g<count($array); $g++) {
@@ -125,50 +141,31 @@ function GetControlOfZero($array) {
     }
     echo '</tr>';
     echo '</table>';
-    echo '<pre>';
-    //print_r($zero_address);
-    echo '</pre>';
 
-    /*Взять каждый элемент строки*/
+    for ($i=0; $i<count($array); $i++) {
+        for ($g=0; $g<count($array); $g++) {
 
-    /*Объявляем массив лишних пар по X, заполняем его в цикле*/
-    $ExtraPairsArrayX = array();
-    /*Объявляем массив лишних пар по Y, заполняем его в цикле*/
-    $ExtraPairsArrayY = array();
-    /*Массив значений координат Y. Используется для того, чтобы
-    перебирать все значения этого массива по правую сторону от координаты X
-    */
-    $y_string = array();
-    foreach ($zero_address as $item) {
-        $y_string[] = $item->y;
+        }
+        for ($g=0; $g<count($array); $g++) {
+
+        }
     }
+}
 
-    $i = 0;
-    foreach ($zero_address as $zero_address1) {
-        /*Фиксируем первую координату ПО СТРОКЕ*/
-         $finder_value = $zero_address1->x;
 
-         for ($f=$i+1;$f<count($y_string);$f++) {
-             if ($y_string[$f] == $finder_value) {
-                 echo "Нашёл пару значений. Значение $y_string[$f] совпадает со значением $finder_value<br>";
-                 $ExtraPairsArrayX[] = $zero_address1->x;
-                 $ExtraPairsArrayY[] = $zero_address1->y;
-             }
-         }
+function printMatrix($array,$description) {
+    /*Заголовок*/
+    echo "<h5 class='header'>$description</h5>";
+    echo '
+        <table class="table_s table-bordered">';
 
-        /*foreach ($zero_address as $zero_address2) {
-
-            if ($zero_address2->y == $finder_value) {
-                echo "Нашёл пару значений. Значение $zero_address2->y совпадает со значением $finder_value<br>";
-                $ExtraPairsArrayX[] = $zero_address2->x;
-                $ExtraPairsArrayY[] = $zero_address2->y;
-            }
-        }*/
-
-        $i++;
+    for ($i=0; $i<count($array); $i++) {
+        echo '<tr>';
+        if ()
+        for ($g=0; $g<count($array); $g++) {
+            echo '<td style="text-align: center;">'.$array[$i][$g].'</td>';
+        }
+        echo '</tr>';
     }
-    echo '<pre>';
-    var_dump($ExtraPairsArrayX);
-    var_dump($ExtraPairsArrayY);
-    echo '</pre>';
+    echo '</table><br>';
 }
