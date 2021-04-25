@@ -62,96 +62,38 @@ function GetUserMatrixByForm() {
 
 /*Вычисление матрицы на первом шаге алгоритма, когда решаем задачу на максимум*/
 function ReduxMatrixByRows($array) {
-
     $cols = array();
-
     for ($i=0; $i<count($array); $i++) {
-
         $MinOnRow = min($array[$i]); //максимумы в каждой строке
         $rows = array();
-
         for ($g=0; $g<count($array); $g++) {
             $element = abs($array[$i][$g] - $MinOnRow);
-
             $rows[] = $element;
         }
-
         $cols[] = $rows;
         unset($rows);
     }
-    echo '</table><br>';
+    printMatrix($cols,'Редукция матрицы по строкам');
     return $cols;
 }
 
+function ReduxMatrixByCols($array,$min_list) {
 
-function ReduxMatrixByCols($arr) {
-    $cols = array();
-    echo '<br>
-        <table class="table_s table-bordered">';
-    for ($i=0;$i<count($arr);$i++) {
-        echo '<tr>';
-        $MinOnCol = min($arr[$i]);
-
-
-        for ($g=0;$g<count($arr);$g++) {
-
-             echo $cols[] = '<td>'.$arr[$g][$i].'</td>';
+    for ($i = 0; $i < count($array); $i++) {
+        for ($g = 0; $g < count($array); $g++) {
+            $values[] = abs($array[$g][$i] - $min_list[$i]);
         }
-        echo '</tr>';
+        $cols[] = $values;
+        unset($values);
     }
+
     return $cols;
 }
-
-function GetControlOfZero($array) {
-    $zero_address = array();
-
-
-    for ($i=0; $i<count($array); $i++) {
-        for ($g=0; $g<count($array); $g++) {
-            if ($array[$i][$g]==0) {
-                /*Запоминаем адрес нулей*/
-               $obj = new stdClass();
-               $obj->x = $i;
-               $obj->y = $g;
-               $zero_address[] = $obj;
-            }
-        }
-    }
-    /*Выводим таблицы координат с нулями по Х*/
-    echo '<table class="table_s table-bordered">';
-    echo '<tr>';
-    foreach ($zero_address as $item) {
-        echo "<td style='text-align: center'>{$item->x}</td>";
-    }
-    echo '</tr>';
-    echo '</table><br>';
-
-    /*Выводим таблицы координат с нулями по Х*/
-    echo '<br><table class="table_s table-bordered">';
-    echo '<tr>';
-    foreach ($zero_address as $item) {
-        echo "<td style='text-align: center'>{$item->y}</td>";
-    }
-    echo '</tr>';
-    echo '</table>';
-
-    for ($i=0; $i<count($array); $i++) {
-        for ($g=0; $g<count($array); $g++) {
-
-        }
-        for ($g=0; $g<count($array); $g++) {
-
-        }
-    }
-}
-
 
 function printMatrix($array,$description) {
     /*Заголовок*/
     echo "<h5 class='header'>$description</h5>";
-    echo '
-        <table class="table_s table-bordered">';
-
+    echo '<table class="table_s table-bordered">';
     for ($i=0; $i<count($array); $i++) {
         echo '<tr>';
         for ($g=0; $g<count($array); $g++) {
@@ -166,4 +108,23 @@ function printMatrix($array,$description) {
         echo '</tr>';
     }
     echo '</table><br>';
+}
+
+function matrix_transpose($array) {
+    return $trans = array_map(null, ...$array);
+    //var_dump($trans);
+}
+
+function pre($object) {
+    echo '<pre>';
+    var_dump($object);
+    echo '</pre>';
+}
+
+function GetMinimalElementListByCols($array) {
+    $array = matrix_transpose($array);
+    for ($i = 0; $i < count($array); $i++) {
+        $min_list[] = min($array[$i]);
+    }
+    return $min_list;
 }
