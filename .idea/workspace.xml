@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css.css" afterDir="false" />
+    <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="Наработки по грамотной редукции матриц по стобцам и строкам">
       <change beforePath="$PROJECT_DIR$/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +54,16 @@
       <workItem from="1619118920290" duration="208000" />
       <workItem from="1619119364380" duration="2945000" />
       <workItem from="1619289870800" duration="3644000" />
-      <workItem from="1619334960129" duration="6615000" />
+      <workItem from="1619334960129" duration="6956000" />
     </task>
+    <task id="LOCAL-00001" summary="Наработки по грамотной редукции матриц по стобцам и строкам">
+      <created>1619342718205</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619342718205</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,5 +80,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Наработки по грамотной редукции матриц по стобцам и строкам" />
+    <option name="LAST_COMMIT_MESSAGE" value="Наработки по грамотной редукции матриц по стобцам и строкам" />
   </component>
 </project>

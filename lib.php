@@ -64,25 +64,18 @@ function GetUserMatrixByForm() {
 function ReduxMatrixByRows($array) {
 
     $cols = array();
-    echo '<h5 class="header">Результат редукции матрицы по строкам:</h5>';
-    echo '<br>
-        <table class="table_s table-bordered">';
+
     for ($i=0; $i<count($array); $i++) {
 
         $MinOnRow = min($array[$i]); //максимумы в каждой строке
         $rows = array();
-        echo '<tr>';
+
         for ($g=0; $g<count($array); $g++) {
             $element = abs($array[$i][$g] - $MinOnRow);
-            if ($element==0) {
-                $color = 'yellow';
-            }
-            else {
-                $color = 'white';
-            }
-            echo '<td style="text-align: center; background-color: '.$color.'">'.$rows[] = $element.'</td>';
+
+            $rows[] = $element;
         }
-        echo '</tr>';
+
         $cols[] = $rows;
         unset($rows);
     }
@@ -161,9 +154,14 @@ function printMatrix($array,$description) {
 
     for ($i=0; $i<count($array); $i++) {
         echo '<tr>';
-        if ()
         for ($g=0; $g<count($array); $g++) {
-            echo '<td style="text-align: center;">'.$array[$i][$g].'</td>';
+            if ($array[$i][$g]==0) {
+                $color = 'yellow';
+            }
+            else {
+                $color = 'white';
+            }
+            echo '<td style="text-align: center; background-color: '.$color.'">'.$array[$i][$g].'</td>';
         }
         echo '</tr>';
     }

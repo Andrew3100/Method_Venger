@@ -21,12 +21,7 @@ for ($row=1;$row<=$size;$row++) {
 
 
 /*Вычитаем минимумы по строкам*/
-echo '<pre>';
-var_dump($step1 = ReduxMatrixByRows($cols));
-echo '/<pre>';
-
-
-
-printMatrix($step1,'Редукция');
+($step1 = ReduxMatrixByRows($cols));
+printMatrix($step1,'Редукция матрицы по строкам');
 
 
