@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="Наработки по грамотной редукции матриц по стобцам и строкам">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,7 @@
       <workItem from="1619118920290" duration="208000" />
       <workItem from="1619119364380" duration="2945000" />
       <workItem from="1619289870800" duration="3644000" />
-      <workItem from="1619334960129" duration="6956000" />
+      <workItem from="1619334960129" duration="15860000" />
     </task>
     <task id="LOCAL-00001" summary="Наработки по грамотной редукции матриц по стобцам и строкам">
       <created>1619342718205</created>
@@ -63,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619342718205</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Наработки по грамотной редукции матриц по стобцам и строкам">
+      <created>1619342979327</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619342979327</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

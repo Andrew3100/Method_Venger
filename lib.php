@@ -73,7 +73,7 @@ function ReduxMatrixByRows($array) {
         $cols[] = $rows;
         unset($rows);
     }
-    printMatrix($cols,'Редукция матрицы по строкам');
+    printMatrix($cols,'Шаг 1. Редукция матрицы по строкам');
     return $cols;
 }
 
@@ -81,11 +81,12 @@ function ReduxMatrixByCols($array,$min_list) {
 
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
-            $values[] = abs($array[$i][$g] - $min_list[$i]);
+            $values[] = abs($array[$g][$i] - $min_list[$i]);
         }
         $cols[] = $values;
         unset($values);
     }
+    printMatrix(matrix_transpose($cols),'Шаг 2. Редукция матрицы по столбцам');
     return $cols;
 }
 
@@ -126,4 +127,26 @@ function GetMinimalElementListByCols($array) {
         $min_list[] = min($array[$i]);
     }
     return $min_list;
+}
+
+
+function CrossOutLinesAndRows($array) {
+
+    for ($i = 0; $i < count($array); $i++) {
+        $byCols[] = (array_count_values($array[$i])[0]);
+    }
+    $array = matrix_transpose($array);
+    for ($i = 0; $i < count($array); $i++) {
+        $byRows[] = (array_count_values($array[$i])[0]);
+    }
+    for ($i = 0; $i < count($byRows); $i++) {
+        if ($byRows[$i]>$byCols[$i]) {
+
+               echo "Рекомендую вычеркнуть $i столбец<br>";
+
+        }
+        else {
+            echo "Рекомендую вычеркнуть $i строку<br>";
+        }
+    }
 }

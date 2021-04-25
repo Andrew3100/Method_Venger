@@ -17,12 +17,14 @@ for ($row=1;$row<=$size;$row++) {
 
 echo '</pre>';
 
+printMatrix($cols,'Исходная матрица');
+/*Проводим редукцию матрицы по строкам*/
 $step1 = ReduxMatrixByRows($cols);
+
 /*Для проведения редукции по столбцам вычисляем массив минимумов по строкам*/
 $min_list = (GetMinimalElementListByCols($step1));
 
-$k = (ReduxMatrixByCols($step1,$min_list));
+/*Проводим редукцию по столбцам, получаем матрицу, из которой будем вычёркивать строки по Венгерскому алгоритму*/
+$matrixForCrossOut = ReduxMatrixByCols($step1,$min_list);
 
-printMatrix($k,'Редукция по столбцам');
-
-//printMatrix($k,'Результат редукции по столбцам');
+CrossOutLinesAndRows($matrixForCrossOut);
