@@ -86,7 +86,7 @@ function ReduxMatrixByCols($array,$min_list) {
         $cols[] = $values;
         unset($values);
     }
-    printMatrix(matrix_transpose($cols),'Шаг 2. Редукция матрицы по столбцам');
+    printMatrix(($cols),'Шаг 2. Редукция матрицы по столбцам');
     return $cols;
 }
 
@@ -99,11 +99,15 @@ function printMatrix($array,$description) {
         for ($g=0; $g<count($array); $g++) {
             if ($array[$i][$g]==0) {
                 $color = 'yellow';
+                $tag = '<b>';
+                $tag_close = '</b>';
             }
             else {
                 $color = 'white';
+                $tag = '';
+                $tag_close = '';
             }
-            echo '<td style="text-align: center; background-color: '.$color.'">'.$array[$i][$g].'</td>';
+            echo '<td style="text-align: center; background-color: '.$color.'">'.$tag.''.$array[$i][$g].''.$tag_close.'</td>';
         }
         echo '</tr>';
     }
@@ -130,23 +134,45 @@ function GetMinimalElementListByCols($array) {
 }
 
 
-function CrossOutLinesAndRows($array) {
-
+function CrossOutLinesAndCols($array) {
+    /*Объявляем массивы вычеркнутых строк и столбцов*/
+    $CrossOutLines = array();
+    $CrossOutCols  = array();
+    printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
+    /*Формируем массивы столбцов*/
     for ($i = 0; $i < count($array); $i++) {
-        $byCols[] = (array_count_values($array[$i])[0]);
-    }
-    $array = matrix_transpose($array);
-    for ($i = 0; $i < count($array); $i++) {
-        $byRows[] = (array_count_values($array[$i])[0]);
-    }
-    for ($i = 0; $i < count($byRows); $i++) {
-        if ($byRows[$i]>$byCols[$i]) {
-
-               echo "Рекомендую вычеркнуть $i столбец<br>";
+        for ($g = 0; $g < count($array); $g++) {
 
         }
-        else {
-            echo "Рекомендую вычеркнуть $i строку<br>";
+    }
+    $c = 1;
+    for ($i = 0; $i < count($array); $i++) {
+        for ($g = 0; $g < count($array); $g++) {
+            /*Работаем только с нулями*/
+            if ($array[$i][$g]==0) {
+                $el = $array[$i][$g];
+                echo "<b>Рассматриваю элемент $c</b><br>";
+                echo "Элементу 0 с адресом <b>[$i;$g]</b> принадлежит строка <b>$i</b> и столбец <b>$g</b><br>";
+                echo 'Строка:';
+                pre($array[$i]);
+                if ($black_list = array_count_values($array[$i])[0]) {
+                    echo "Для элемента $c найдено $black_list нулей в строке<br>";
+                }
+                echo 'Столбец:';
+                pre($array[$g]);
+                /*Для быстрого доступа к массиву значений в столбце делаем транспонирование дважды*/
+                $array = matrix_transpose($array);
+                /*Если в массиве попадается ноль*/
+                if ($black_list = array_count_values($array[$g])[0]) {
+                    echo "Для данного нуля найдено $black_list нулей в столбце<br>";
+                }
+                $array = matrix_transpose($array);
+
+
+                $c++;
+
+            }
         }
     }
+
 }
