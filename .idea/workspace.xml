@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="Отличный алгоритм рекомендаций перечёркивания строк!!!!!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть">
       <change beforePath="$PROJECT_DIR$/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619467931724</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть">
+      <created>1619470752002</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619470752002</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Наработки по грамотной редукции матриц по стобцам и строкам" />
     <MESSAGE value="Отличный алгоритм рекомендаций перечёркивания строк!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Отличный алгоритм рекомендаций перечёркивания строк!!!!!" />
+    <MESSAGE value="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть" />
   </component>
 </project>

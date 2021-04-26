@@ -195,3 +195,11 @@ function CrossOutLinesAndCols($array) {
     pre($BL);
 
 }
+
+function GetModernMatrix($user_matrix,$black_list) {
+    for ($i = 0; $i < count($user_matrix); $i++) {
+        for ($g = 0; $g < count($user_matrix); $g++) {
+
+        }
+    }
+}
