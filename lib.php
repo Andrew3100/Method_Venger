@@ -161,23 +161,37 @@ function CrossOutLinesAndCols($array) {
     //pre($data);
 
     for ($k=0; $k < count($data); $k++) {
-        /*echo $data[$k]->zero_on_row;
-        echo $data[$k]->zero_on_col;
-        echo $data[$k]->row_addr;
-        echo $data[$k]->col_addr;*/
+
+        $CrossOut = new stdClass();
         if ($data[$k]->zero_on_row >= $data[$k]->zero_on_col) {
-            echo "Рекомендую вычеркнуть {$data[$k]->row_addr} строку<br>";
+            $fixed[] = $data[$k]->row_addr.', row';
+            $CrossOut->row = $data[$k]->row_addr;
         }
-        /*else {
-            if ($data[$k]->zero_on_row == $data[$k]->zero_on_col) {
-                echo "Можно вычеркнуть как {$data[$k]->row_addr} строку, так и {$data[$k]->col_addr} столбец<br>";
-            }*/
+
             else {
-                echo "Рекомендую вычеркнуть {$data[$k]->col_addr} столбец<br>";
+                $fixed[] = $data[$k]->col_addr.', col';
+                $CrossOut->col = $data[$k]->col_addr;
             }
+            $cross_list[] = $CrossOut;
+            unset($CrossOut);
         }
 
+    /*Получили уникальный массив т*/
+    $fixed = (array_values(array_unique($fixed)));
+    ($fixed = (implode(', ',$fixed)));
+    ($fixed = explode(', ',$fixed));
 
-
+    for ($i = 0; $i < count($fixed); $i = $i+2) {
+        $BlackList = new stdClass();
+        if ($fixed[$i+1] == 'row') {
+            $BlackList->row = $fixed[$i];
+        }
+        if ($fixed[$i+1] == 'col') {
+            $BlackList->col = $fixed[$i];
+        }
+        $BL[] = $BlackList;
+    }
+    /*Вот тут наша цель - массив объектов, указывающих номер строки или столбца*/
+    pre($BL);
 
 }
