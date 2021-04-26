@@ -4,7 +4,6 @@
     <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\localhost\fff\venger" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,12 +49,28 @@
       <workItem from="1619082970920" duration="6013000" />
       <workItem from="1619170609749" duration="1248000" />
     </task>
+    <task id="LOCAL-00001" summary="Наработки алгоритма вычёркивания строк">
+      <created>1619437080047</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619437080047</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Наработки алгоритма вычёркивания строк" />
+    <option name="LAST_COMMIT_MESSAGE" value="Наработки алгоритма вычёркивания строк" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2505" y="83" key="CommitChangelistDialog2" timestamp="1619437078329">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2505" y="83" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619437078329" />
     <state x="2758" y="418" width="461" height="204" key="Github.ShareDialog" timestamp="1619093889756">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -59,6 +79,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2690" y="219" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619093910590" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619437083292">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619437083292" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1619093132069">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

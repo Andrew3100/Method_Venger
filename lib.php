@@ -140,32 +140,31 @@ function CrossOutLinesAndCols($array) {
     $CrossOutCols  = array();
     printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
     /*Формируем массивы столбцов*/
-    for ($i = 0; $i < count($array); $i++) {
-        for ($g = 0; $g < count($array); $g++) {
 
-        }
-    }
     $c = 1;
+    $obj = new stdClass();
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
             /*Работаем только с нулями*/
             if ($array[$i][$g]==0) {
                 $el = $array[$i][$g];
-                echo "<b>Рассматриваю элемент $c</b><br>";
-                echo "Элементу 0 с адресом <b>[$i;$g]</b> принадлежит строка <b>$i</b> и столбец <b>$g</b><br>";
-                echo 'Строка:';
-                pre($array[$i]);
+                //echo "<b>Рассматриваю элемент $c</b><br>";
+                //echo "Элементу 0 с адресом <b>[$i;$g]</b> принадлежит строка <b>$i</b> и столбец <b>$g</b><br>";
                 if ($black_list = array_count_values($array[$i])[0]) {
-                    echo "Для элемента $c найдено $black_list нулей в строке<br>";
+                    //$CrossOutLines[] = "$black_list<br>";
+                    $obj->RowsZero = $black_list;
+                    $obj->i = $i;
+
                 }
-                echo 'Столбец:';
-                pre($array[$g]);
                 /*Для быстрого доступа к массиву значений в столбце делаем транспонирование дважды*/
                 $array = matrix_transpose($array);
                 /*Если в массиве попадается ноль*/
                 if ($black_list = array_count_values($array[$g])[0]) {
-                    echo "Для данного нуля найдено $black_list нулей в столбце<br>";
+                    //$CrossOutCols[] = "$black_list";
+                    $obj->RowsCol = $black_list;
+                    $obj->g = $g;
                 }
+                $data[] = $obj;
                 $array = matrix_transpose($array);
 
 
@@ -174,5 +173,6 @@ function CrossOutLinesAndCols($array) {
             }
         }
     }
+    pre($data);
 
 }
