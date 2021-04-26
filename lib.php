@@ -142,7 +142,6 @@ function CrossOutLinesAndCols($array) {
     /*Формируем массивы столбцов*/
 
     $c = 1;
-    $obj = new stdClass();
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
             /*Работаем только с нулями*/
@@ -150,29 +149,27 @@ function CrossOutLinesAndCols($array) {
                 $el = $array[$i][$g];
                 //echo "<b>Рассматриваю элемент $c</b><br>";
                 //echo "Элементу 0 с адресом <b>[$i;$g]</b> принадлежит строка <b>$i</b> и столбец <b>$g</b><br>";
-                if ($black_list = array_count_values($array[$i])[0]) {
-                    //$CrossOutLines[] = "$black_list<br>";
-                    $obj->RowsZero = $black_list;
-                    $obj->i = $i;
-
+                $obj = new stdClass();
+                if ($black_list = array_count_values($array[$g])[0]) {
+                    pre($black_list);//$CrossOutLines[] = $black_list;
+                    //$obj->RowsZero = $black_list;
+                    //$obj->i = $i;
                 }
                 /*Для быстрого доступа к массиву значений в столбце делаем транспонирование дважды*/
                 $array = matrix_transpose($array);
                 /*Если в массиве попадается ноль*/
-                if ($black_list = array_count_values($array[$g])[0]) {
-                    //$CrossOutCols[] = "$black_list";
-                    $obj->RowsCol = $black_list;
-                    $obj->g = $g;
+                if ($black_list = array_count_values($array[$i])[0]) {
+                    //$CrossOutCols[] = $black_list;
+                    pre($black_list);//$CrossOutLines[] = $black_list;
+                    //$obj->RowsCol = $black_list;
+                    //$obj->g = $g;
                 }
                 $data[] = $obj;
+                unset($obj);
                 $array = matrix_transpose($array);
-
-
                 $c++;
-
             }
         }
     }
-    pre($data);
 
 }
