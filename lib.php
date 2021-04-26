@@ -135,41 +135,49 @@ function GetMinimalElementListByCols($array) {
 
 
 function CrossOutLinesAndCols($array) {
-    /*Объявляем массивы вычеркнутых строк и столбцов*/
-    $CrossOutLines = array();
-    $CrossOutCols  = array();
+
     printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
     /*Формируем массивы столбцов*/
 
-    $c = 1;
+
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
             /*Работаем только с нулями*/
             if ($array[$i][$g]==0) {
-                $el = $array[$i][$g];
-                //echo "<b>Рассматриваю элемент $c</b><br>";
-                //echo "Элементу 0 с адресом <b>[$i;$g]</b> принадлежит строка <b>$i</b> и столбец <b>$g</b><br>";
-                $obj = new stdClass();
-                if ($black_list = array_count_values($array[$g])[0]) {
-                    pre($black_list);//$CrossOutLines[] = $black_list;
-                    //$obj->RowsZero = $black_list;
-                    //$obj->i = $i;
-                }
-                /*Для быстрого доступа к массиву значений в столбце делаем транспонирование дважды*/
+                /*Создаём объект, в котором храним адрес нуля, количество нулей по столбцу и строке этого адреса*/
+                $BlackList = new stdClass();
+                $BlackList->row_addr = $i;
+                $BlackList->col_addr = $g;
+                $BlackList->zero_on_row = array_count_values($array[$i])[0];
                 $array = matrix_transpose($array);
-                /*Если в массиве попадается ноль*/
-                if ($black_list = array_count_values($array[$i])[0]) {
-                    //$CrossOutCols[] = $black_list;
-                    pre($black_list);//$CrossOutLines[] = $black_list;
-                    //$obj->RowsCol = $black_list;
-                    //$obj->g = $g;
-                }
-                $data[] = $obj;
-                unset($obj);
+                $BlackList->zero_on_col = array_count_values($array[$g])[0];
+                $data[] = $BlackList;
+                unset($BlackList);
                 $array = matrix_transpose($array);
-                $c++;
             }
+
         }
     }
+    //pre($data);
+
+    for ($k=0; $k < count($data); $k++) {
+        /*echo $data[$k]->zero_on_row;
+        echo $data[$k]->zero_on_col;
+        echo $data[$k]->row_addr;
+        echo $data[$k]->col_addr;*/
+        if ($data[$k]->zero_on_row >= $data[$k]->zero_on_col) {
+            echo "Рекомендую вычеркнуть {$data[$k]->row_addr} строку<br>";
+        }
+        /*else {
+            if ($data[$k]->zero_on_row == $data[$k]->zero_on_col) {
+                echo "Можно вычеркнуть как {$data[$k]->row_addr} строку, так и {$data[$k]->col_addr} столбец<br>";
+            }*/
+            else {
+                echo "Рекомендую вычеркнуть {$data[$k]->col_addr} столбец<br>";
+            }
+        }
+
+
+
 
 }
