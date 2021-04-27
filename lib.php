@@ -9,7 +9,7 @@ function getFieldForMatrix() {
     for ($row=1;$row<=$size;$row++) {
         echo '<tr>';
         for ($col=1;$col<=$size;$col++) {
-            $rand = rand(1,10);
+            $rand = rand(5,1000);
             echo "<td>
                 <input name='A$row$col' value='$rand' placeholder='A$row$col' class='table_td form-control form-control-lg' type='text' required>
               </td>";
@@ -40,7 +40,7 @@ function GetUserMatrixByForm() {
         for ($col=1;$col<=$size;$col++) {
             $rand = '';
             /*можно раскомментировать если лень заполнять матрицу при тестировании программы*/
-            $rand = rand(1,10);
+            $rand = rand(10,30);
             echo "<td>
                 <input name='A$row$col' value='$rand' placeholder='A$row$col' class='table_td form-control form-control-lg' type='text' required>
               </td>";
@@ -192,7 +192,7 @@ function CrossOutLinesAndCols($array) {
         }
         $BL[] = $BlackList;
     }
-    //pre($BL);
+    pre($BL);
     /*Вот тут наша цель - массив объектов, указывающих номер строки или столбца*/
 
 
@@ -207,7 +207,7 @@ function CrossOutLinesAndCols($array) {
             //echo "Строку $i необходимо вычеркнуть<br>";
             for ($l = 0; $l < count($array[$i]); $l++) {
 //                unset($array[$i][$l]);
-                $array[$i][$l] = 'null';
+                $array[$i][$l] .= 'null';
             }
 
             $cross_row[] = $i;
@@ -220,7 +220,7 @@ function CrossOutLinesAndCols($array) {
             //echo "Столбец $g необходимо вычеркнуть<br>";
             for ($s = 0; $s < count($array[$g]); $s++) {
 //                unset($array[$s][$g]);
-                $array[$s][$g] = 'null';
+                $array[$s][$g] .= 'null';
             }
             $cross_col[] = $g;
         }
@@ -274,7 +274,7 @@ function printBlackMatrix($array,$description) {
         echo '<tr>';
 
         for ($g=0; $g<count($array); $g++) {
-            if ($array[$i][$g] == 'null') {
+            if (/*$array[$i][$g] == 'null'*/substr_count($array[$i][$g],'null') >= 1) {
                 $array[$i][$g] = 'удалено';
                 $color = '#212529';
                 $tag = '<b>';
