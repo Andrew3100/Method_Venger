@@ -64,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619440542144</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Модификация матрицы">
+      <created>1619535534079</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619535534079</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,13 +79,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Наработки алгоритма вычёркивания строк" />
-    <option name="LAST_COMMIT_MESSAGE" value="Наработки алгоритма вычёркивания строк" />
+    <MESSAGE value="Модификация матрицы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Модификация матрицы" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2505" y="83" key="CommitChangelistDialog2" timestamp="1619440540791">
+    <state x="2505" y="83" key="CommitChangelistDialog2" timestamp="1619535532817">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="83" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619440540791" />
+    <state x="2505" y="83" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619535532817" />
     <state x="2758" y="418" width="461" height="204" key="Github.ShareDialog" timestamp="1619093889756">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -87,10 +95,22 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2690" y="219" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619093910590" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619440547556">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619535537436">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619440547556" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619535537436" />
+    <state x="2012" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1619536680577">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2012" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619536680577" />
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619536308769">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619536308769" />
+    <state x="2587" y="253" width="585" height="534" key="find.popup" timestamp="1619535616167">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619535616167" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1619093132069">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

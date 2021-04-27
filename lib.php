@@ -9,7 +9,7 @@ function getFieldForMatrix() {
     for ($row=1;$row<=$size;$row++) {
         echo '<tr>';
         for ($col=1;$col<=$size;$col++) {
-            $rand = rand(1,100);
+            $rand = rand(1,10);
             echo "<td>
                 <input name='A$row$col' value='$rand' placeholder='A$row$col' class='table_td form-control form-control-lg' type='text' required>
               </td>";
@@ -231,8 +231,18 @@ function CrossOutLinesAndCols($array) {
 //    printMatrix($usermatrix,'Исходная матрица');
 //    pre($cross_col);
 //    pre($cross_row);
-
+    pre($array);
     return ($array);
+}
+
+function ParseTwoMatrix($array) {
+    for ($i = 0; $i < count($array); $i++) {
+        for ($g = 0; $g < count($array); $g++) {
+            if ($array[$i][$g] == 'null') {
+
+            }
+        }
+    }
 }
 
 
