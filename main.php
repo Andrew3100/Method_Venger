@@ -34,4 +34,4 @@ $mod_matrix = CrossOutLinesAndCols($matrixForCrossOut);
 /*Получаем максимальный элемент оставшегося массива для дальнейшей обработки*/
  max(GetUseElementsArray($mod_matrix));
 
- ParseTwoMatrix($matrixForCrossOut);
+ ParseTwoMatrix($mod_matrix);

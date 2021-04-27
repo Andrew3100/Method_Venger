@@ -169,13 +169,13 @@ function CrossOutLinesAndCols($array) {
             $CrossOut->row = $data[$k]->row_addr;
         }
 
-            else {
-                $fixed[] = $data[$k]->col_addr.', col';
-                $CrossOut->col = $data[$k]->col_addr;
-            }
-            $cross_list[] = $CrossOut;
-            unset($CrossOut);
+        else {
+            $fixed[] = $data[$k]->col_addr.', col';
+            $CrossOut->col = $data[$k]->col_addr;
         }
+        $cross_list[] = $CrossOut;
+        unset($CrossOut);
+    }
 
     /*Получили уникальный массив объектов*/
     $fixed = (array_values(array_unique($fixed)));
@@ -236,13 +236,22 @@ function CrossOutLinesAndCols($array) {
 }
 
 function ParseTwoMatrix($array) {
+    $k = 0;
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
             if ($array[$i][$g] == 'null') {
-
+                for ($s = 0; $s < count($array[$g]); $s++) {
+                    if ($array[$s][$g] == 'null') {
+                        $close[] = 'cl';
+                    }
+                }
+                if (count($close) == count($array[$g])) {
+                    echo 'Закрыто';
+                }
             }
         }
     }
+    echo  $k;
 }
 
 
@@ -263,8 +272,9 @@ function printBlackMatrix($array,$description) {
     echo '<table class="table_s table-bordered">';
     for ($i=0; $i<count($array); $i++) {
         echo '<tr>';
+
         for ($g=0; $g<count($array); $g++) {
-            if ($array[$i][$g]=='null') {
+            if ($array[$i][$g] == 'null') {
                 $array[$i][$g] = 'удалено';
                 $color = '#212529';
                 $tag = '<b>';
