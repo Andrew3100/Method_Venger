@@ -40,7 +40,7 @@ function GetUserMatrixByForm() {
         for ($col=1;$col<=$size;$col++) {
             $rand = '';
             /*можно раскомментировать если лень заполнять матрицу при тестировании программы*/
-            $rand = rand(1,1000);
+            $rand = rand(1,10);
             echo "<td>
                 <input name='A$row$col' value='$rand' placeholder='A$row$col' class='table_td form-control form-control-lg' type='text' required>
               </td>";
@@ -137,6 +137,7 @@ function GetMinimalElementListByCols($array) {
 function CrossOutLinesAndCols($array) {
 
     printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
+    printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
     /*Формируем массивы столбцов*/
 
 
@@ -176,7 +177,7 @@ function CrossOutLinesAndCols($array) {
             unset($CrossOut);
         }
 
-    /*Получили уникальный массив т*/
+    /*Получили уникальный массив объектов*/
     $fixed = (array_values(array_unique($fixed)));
     ($fixed = (implode(', ',$fixed)));
     ($fixed = explode(', ',$fixed));
@@ -191,15 +192,110 @@ function CrossOutLinesAndCols($array) {
         }
         $BL[] = $BlackList;
     }
+    //pre($BL);
     /*Вот тут наша цель - массив объектов, указывающих номер строки или столбца*/
-    pre($BL);
 
+
+
+
+    /*Переписываем исходную матрицу*/
+    $usermatrix = $array;
+    ini_set('memory_limit', '100M');
+    for ($i = 0; $i < count($array); $i++) {
+        $invalid_row = isRowValid($i,$BL);
+        if ($invalid_row == 'invalid') {
+            //echo "Строку $i необходимо вычеркнуть<br>";
+            for ($l = 0; $l < count($array[$i]); $l++) {
+//                unset($array[$i][$l]);
+                $array[$i][$l] = 'null';
+            }
+
+            $cross_row[] = $i;
+        }
+    }
+
+    for ($g = 0; $g < count($array); $g++) {
+        $invalid_col = isColValid($g,$BL);
+        if ($invalid_col == 'invalid' AND $array[$g][$g] != 'null_row') {
+            //echo "Столбец $g необходимо вычеркнуть<br>";
+            for ($s = 0; $s < count($array[$g]); $s++) {
+//                unset($array[$s][$g]);
+                $array[$s][$g] = 'null';
+            }
+            $cross_col[] = $g;
+        }
+    }
+    printMatrix($array,'Элементы, не участвующие в расчётах');
+
+    printBlackMatrix($array,'Модифицированная матрица');
+//    printMatrix($usermatrix,'Исходная матрица');
+//    pre($cross_col);
+//    pre($cross_row);
+
+    return ($array);
 }
 
-function GetModernMatrix($user_matrix,$black_list) {
-    for ($i = 0; $i < count($user_matrix); $i++) {
-        for ($g = 0; $g < count($user_matrix); $g++) {
+
+function GetUseElementsArray($array) {
+    for ($i = 0; $i < count($array); $i++) {
+        for ($g = 0; $g < count($array); $g++) {
+            if ($array[$i][$g] != 'null') {
+                $use_elements[] = $array[$i][$g];
+            }
+        }
+    }
+    return $use_elements;
+}
+
+
+function printBlackMatrix($array,$description) {
+    echo "<h5 class='header'>$description</h5>";
+    echo '<table class="table_s table-bordered">';
+    for ($i=0; $i<count($array); $i++) {
+        echo '<tr>';
+        for ($g=0; $g<count($array); $g++) {
+            if ($array[$i][$g]=='null') {
+                $array[$i][$g] = 'удалено';
+                $color = '#212529';
+                $tag = '<b>';
+                $tag_close = '</b>';
+            }
+            else {
+                $color = 'white';
+                $tag = '';
+                $tag_close = '';
+            }
+            echo '<td style="text-align: center; background-color: '.$color.'">'.$tag.''.$array[$i][$g].''.$tag_close.'</td>';
+        }
+        echo '</tr>';
+    }
+    echo '</table><br>';
+}
+
+/*Функции проверки валидности строк и столбцов*/
+function isRowValid($i,$list) {
+    $flag = 'valid';
+    foreach ($list as $black) {
+        if (isset($black->row)) {
+            if ($black->row == $i) {
+
+                $flag = 'invalid';
+            }
 
         }
     }
+    return $flag;
+
+}
+
+function isColValid($g,$list) {
+    $flag = 'valid';
+    foreach ($list as $black) {
+        if (isset($black->col)) {
+            if ($black->col == $g) {
+                $flag = 'invalid';
+            }
+        }
+    }
+    return $flag;
 }

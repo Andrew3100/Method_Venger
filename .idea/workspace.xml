@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть">
+    <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +17,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="ProjectId" id="1rWDUgpHTWhhImmxipAmnuqYZi5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,7 +25,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -40,7 +33,11 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\localhost\fff\venger" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,61 +48,56 @@
       <option name="presentableId" value="Default" />
       <updated>1619082969734</updated>
       <workItem from="1619082970920" duration="6013000" />
-      <workItem from="1619118920290" duration="208000" />
-      <workItem from="1619119364380" duration="2945000" />
-      <workItem from="1619289870800" duration="3644000" />
-      <workItem from="1619334960129" duration="15860000" />
+      <workItem from="1619170609749" duration="1248000" />
     </task>
-    <task id="LOCAL-00001" summary="Наработки по грамотной редукции матриц по стобцам и строкам">
-      <created>1619342718205</created>
+    <task id="LOCAL-00001" summary="Наработки алгоритма вычёркивания строк">
+      <created>1619437080047</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1619342718205</updated>
+      <updated>1619437080047</updated>
     </task>
-    <task id="LOCAL-00002" summary="Наработки по грамотной редукции матриц по стобцам и строкам">
-      <created>1619342979327</created>
+    <task id="LOCAL-00002" summary="Наработки алгоритма вычёркивания строк">
+      <created>1619440542144</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1619342979327</updated>
+      <updated>1619440542144</updated>
     </task>
-    <task id="LOCAL-00003" summary="Отличный алгоритм рекомендаций перечёркивания строк!!!!!">
-      <created>1619467931723</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619467931724</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть">
-      <created>1619470752002</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619470752002</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Наработки по грамотной редукции матриц по стобцам и строкам" />
-    <MESSAGE value="Отличный алгоритм рекомендаций перечёркивания строк!!!!!" />
-    <MESSAGE value="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал объект, указывающий номер строки или столбца, который надо зачеркнуть" />
+    <MESSAGE value="Наработки алгоритма вычёркивания строк" />
+    <option name="LAST_COMMIT_MESSAGE" value="Наработки алгоритма вычёркивания строк" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2505" y="83" key="CommitChangelistDialog2" timestamp="1619440540791">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2505" y="83" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619440540791" />
+    <state x="2758" y="418" width="461" height="204" key="Github.ShareDialog" timestamp="1619093889756">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2758" y="418" width="461" height="204" key="Github.ShareDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619093889756" />
+    <state x="2690" y="219" key="Github.UntrackedFilesDialog" timestamp="1619093910590">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2690" y="219" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619093910590" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619440547556">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619440547556" />
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1619093132069">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619093132069" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1619508340660">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619508340660" />
   </component>
 </project>

@@ -19,8 +19,6 @@ echo '</pre>';
 
 printMatrix($cols,'Исходная матрица');
 
-
-
 /*Проводим редукцию матрицы по строкам*/
 $step1 = ReduxMatrixByRows($cols);
 
@@ -30,5 +28,8 @@ $min_list = (GetMinimalElementListByCols($step1));
 /*Проводим редукцию по столбцам, получаем матрицу, из которой будем вычёркивать строки по Венгерскому алгоритму*/
 $matrixForCrossOut = ReduxMatrixByCols($step1,$min_list);
 
+/*Создаём вычеркнутую матрицу с созданным чёрным списком элементов*/
+$mod_matrix = CrossOutLinesAndCols($matrixForCrossOut);
 
-CrossOutLinesAndCols($matrixForCrossOut);
+/*Получаем максимальный элемент оставшегося массива для дальнейшей обработки*/
+echo max(GetUseElementsArray($mod_matrix));
