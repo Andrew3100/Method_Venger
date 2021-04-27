@@ -235,23 +235,39 @@ function CrossOutLinesAndCols($array) {
     return ($array);
 }
 
-function ParseTwoMatrix($array) {
-    $k = 0;
+function ParseTwoMatrix($array,$min,$use_matrix) {
+    printMatrix($use_matrix,'Неоптимальный план');
+    /*Собираем матрицу показателей для статуса закрытости элемента матрицы*/
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
-            if ($array[$i][$g] == 'null') {
-                for ($s = 0; $s < count($array[$g]); $s++) {
-                    if ($array[$s][$g] == 'null') {
-                        $close[] = 'cl';
-                    }
+            if (substr_count($array[$i][$g],'null') == 1) {
+                $sub_matrix1[] = 1;
+            }
+        else {
+                if (substr_count($array[$i][$g],'null') > 1) {
+                    $sub_matrix1[] = 2;
                 }
-                if (count($close) == count($array[$g])) {
-                    echo 'Закрыто';
+            else {
+                    $sub_matrix1[] = 0;
                 }
             }
         }
+        /*Субматрица, с которой можно соотнести операции, проделываемые на последнем шаге алгоритма*/
+        $sub_matrix[] = $sub_matrix1;
+        unset($sub_matrix1);
     }
-    echo  $k;
+    /*Парсим исходную матрицу в соответствии с верхней матрицей*/
+    for ($i = 0; $i < count($use_matrix); $i++) {
+        for ($g = 0; $g < count($use_matrix); $g++) {
+            if ($sub_matrix[$i][$g] == 0) {
+                $use_matrix[$i][$g] = abs($use_matrix[$i][$g] - 2);
+            }
+            if ($sub_matrix[$i][$g] == 2) {
+                $use_matrix[$i][$g] = abs($use_matrix[$i][$g] + $min);
+            }
+        }
+    }
+    printMatrix($use_matrix,'Оптимальный план');
 }
 
 
