@@ -279,6 +279,7 @@ function GetUseElementsArray($array) {
             }
         }
     }
+    pre($use_elements);
     return $use_elements;
 }
 
