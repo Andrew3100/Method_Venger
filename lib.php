@@ -86,8 +86,8 @@ function ReduxMatrixByCols($array,$min_list) {
         $cols[] = $values;
         unset($values);
     }
-    printMatrix(($cols),'Шаг 2. Редукция матрицы по столбцам');
-    return $cols;
+    printMatrix((matrix_transpose($cols)),'Шаг 2. Редукция матрицы по столбцам');
+    return matrix_transpose($cols);
 }
 
 function printMatrix($array,$description) {
@@ -137,9 +137,8 @@ function GetMinimalElementListByCols($array) {
 function CrossOutLinesAndCols($array) {
 
     printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
-    printMatrix($array,'Поиск вычёркиваемых строк и столбцов');
+    $control_matrix_from_compare = $array;
     /*Формируем массивы столбцов*/
-
 
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
@@ -200,7 +199,7 @@ function CrossOutLinesAndCols($array) {
 
     /*Переписываем исходную матрицу*/
     $usermatrix = $array;
-    ini_set('memory_limit', '100M');
+
     for ($i = 0; $i < count($array); $i++) {
         $invalid_row = isRowValid($i,$BL);
         if ($invalid_row == 'invalid') {
@@ -231,7 +230,8 @@ function CrossOutLinesAndCols($array) {
 //    printMatrix($usermatrix,'Исходная матрица');
 //    pre($cross_col);
 //    pre($cross_row);
-    pre($array);
+    //pre($array);
+
     return ($array);
 }
 
@@ -260,7 +260,7 @@ function ParseTwoMatrix($array,$min,$use_matrix) {
     for ($i = 0; $i < count($use_matrix); $i++) {
         for ($g = 0; $g < count($use_matrix); $g++) {
             if ($sub_matrix[$i][$g] == 0) {
-                $use_matrix[$i][$g] = abs($use_matrix[$i][$g] - 2);
+                $use_matrix[$i][$g] = abs($use_matrix[$i][$g] - $min);
             }
             if ($sub_matrix[$i][$g] == 2) {
                 $use_matrix[$i][$g] = abs($use_matrix[$i][$g] + $min);
@@ -274,7 +274,7 @@ function ParseTwoMatrix($array,$min,$use_matrix) {
 function GetUseElementsArray($array) {
     for ($i = 0; $i < count($array); $i++) {
         for ($g = 0; $g < count($array); $g++) {
-            if ($array[$i][$g] != 'null') {
+            if (substr_count($array[$i][$g],'null') == 0) {
                 $use_elements[] = $array[$i][$g];
             }
         }
@@ -290,7 +290,7 @@ function printBlackMatrix($array,$description) {
         echo '<tr>';
 
         for ($g=0; $g<count($array); $g++) {
-            if (/*$array[$i][$g] == 'null'*/substr_count($array[$i][$g],'null') >= 1) {
+            if (/*$array[$i][$g] == 'null'*/substr_count($array[$i][$g],'null') >= 1 OR $array[$i][$g] == 0) {
                 $array[$i][$g] = 'удалено';
                 $color = '#212529';
                 $tag = '<b>';

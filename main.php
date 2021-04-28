@@ -34,6 +34,7 @@ $matrixForCrossOut = ReduxMatrixByCols($step1,$min_list);
 $mod_matrix = CrossOutLinesAndCols($matrixForCrossOut);
 
 /*Получаем максимальный элемент оставшегося массива для дальнейшей обработки*/
-$min = min(GetUseElementsArray($mod_matrix));
-
- ParseTwoMatrix($mod_matrix,$min,$mod_matrix);
+ $min = min(GetUseElementsArray($mod_matrix));
+echo "$min - минимальное значение";
+ParseTwoMatrix($mod_matrix,$min,$matrixForCrossOut);
+printMatrix($cols,'Исходный вариант');
