@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c420cc05-429c-49d8-a58c-5c1769ce8038" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Курсовая работа.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Курсовая работа.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619535534079</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Модификация матрицы">
+      <created>1619699931824</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619699931824</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,10 +88,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Модификация матрицы" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2505" y="83" key="CommitChangelistDialog2" timestamp="1619535532817">
+    <state x="2505" y="83" key="CommitChangelistDialog2" timestamp="1619699930430">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="83" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619535532817" />
+    <state x="2505" y="83" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619699930430" />
     <state x="2758" y="418" width="461" height="204" key="Github.ShareDialog" timestamp="1619093889756">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -96,10 +100,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2690" y="219" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619093910590" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619535537436">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619699936444">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619535537436" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619699936444" />
     <state x="2012" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1619536680577">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
