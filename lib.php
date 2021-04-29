@@ -35,9 +35,9 @@ function GetUserMatrixByForm() {
 <table class="table_s table-bordered">';
     /*Размер матрицы, введённый пользователем*/
     $size = $_POST['matrix_size'];
-    for ($row=1;$row<=$size;$row++) {
+    for ($row=0;$row<=$size;$row++) {
         echo '<tr>';
-        for ($col=1;$col<=$size;$col++) {
+        for ($col=0;$col<=$size;$col++) {
             $rand = '';
             /*можно раскомментировать если лень заполнять матрицу при тестировании программы*/
             $rand = rand(10,30);

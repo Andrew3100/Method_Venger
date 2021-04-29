@@ -21,6 +21,9 @@ echo '</pre>';
 
 printMatrix($cols,'Исходная матрица');
 
+printMatrix(matrix_transpose($cols),'Эта же матрица, но транспонированная');
+
+
 /*Проводим редукцию матрицы по строкам*/
 $step1 = ReduxMatrixByRows($cols);
 
@@ -37,4 +40,4 @@ $mod_matrix = CrossOutLinesAndCols($matrixForCrossOut);
  $min = min(GetUseElementsArray($mod_matrix));
 echo "$min - минимальное значение";
 ParseTwoMatrix($mod_matrix,$min,$matrixForCrossOut);
-printMatrix($cols,'Исходный вариант');
+printMatrix($cols,'Исходная матрица');
